@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Survey-Form</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <header>
+            <h1 id="title">
+                GPG Survey Form
+            </h1>
+            <hr>
+            <p id="description">
+                Thank you for taking the time to help us improve the management.
+            </p>
+        </header>
+        <form action="" id="survey-form">
+            <label for="name" id="name-label">
+                Name :
+                <input type="text" placeholder="Enter your name" id="name">
+            </label>
+            <label for="email" id="email-label">
+                E-mail :
+                <input type="email" placeholder="E-mail address" pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" id="email">
+            </label>
+            <label for="age" id="number-label">
+                Age(optional) :
+                <input type="number" placeholder="00" min="2" max="3" id="number">
+            </label>  
+
+            <label for="gender">
+                <input type="radio" name="gender" value="Male">Male
+                <input type="radio" name="gender" value="Female">Female
+                <input type="radio" name="gender" value="TG">Transgender
+            </label>
+            
+            
+            <select for="branch" id="dropdown">
+                <option value="IT">Information Technololgy</option>
+                <option value="electronics">Electronics</option>
+                <option value="civil">Civil</option>
+                <option value="MP">Mechanical Production</option>
+                <option value="MC">Moss Communication</option>
+                <option value="FD">Fashion & Designing</option>
+            </select>
+            
+            <label for="">
+                <input type="checkbox" name="branch" value="IT">Information Technololgy
+                <input type="checkbox" name="branch" value="electronics">Electronics
+                <input type="checkbox" name="branch" value="civil">Civil
+                <input type="checkbox" name="branch" value="mechanical prod">Mechanical Production
+                <input type="checkbox" name="branch" value="MC">Moss Communication
+                <input type="checkbox" name="branch" value="FD">Fashion & Designing
+            </label>
+            
+            <label for="additional comments">
+                <p>Leave a suggestion :</p>
+                <textarea name="suggestions"  cols="30" rows="10"></textarea>
+            </label>
+            
+            <input type="submit">
+            
+        </form>
+    </body>
+</html>
