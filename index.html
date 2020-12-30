@@ -4,15 +4,17 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Survey-Form</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Survey-Form</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body class="layer bgimg">
+    <main class="layer">
         <header>
             <h1 id="title">
                 GPG Survey Form
@@ -22,27 +24,55 @@
                 Thank you for taking the time to help us improve the management.
             </p>
         </header>
-        <form action="" id="survey-form">
-            <label for="name" id="name-label">
-                Name :
-                <input type="text" placeholder="Enter your name" id="name">
-            </label>
-            <label for="email" id="email-label">
-                E-mail :
-                <input type="email" placeholder="E-mail address" pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" id="email">
-            </label>
-            <label for="age" id="number-label">
-                Age(optional) :
-                <input type="number" placeholder="00" min="2" max="3" id="number">
-            </label>  
+        <form action="" id="survey-form" class="grid row-gap">
 
-            <label for="gender">
-                <input type="radio" name="gender" value="Male">Male
-                <input type="radio" name="gender" value="Female">Female
-                <input type="radio" name="gender" value="TG">Transgender
-            </label>
+        <!-- name email and Age -->
+
+            <section class="grid row-gap">
+                <div class="two-col col-gap">
+                    <label for="name" id="name-label">
+                        Name :
+                    </label>    
+                    <input required type="text" placeholder="Enter your name" id="name">
+                </div class="row">
+                
+                <div class="two-col col-gap">
+                    <label for="email" id="email-label">
+                        E-mail :
+                    </label>
+                    <input required type="email" placeholder="E-mail address" pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" id="email">
+                </div>
+                
+                <div class="two-col col-gap">
+                    <label for="age" id="number-label">
+                        Age(optional) :
+                    </label>
+                    <input type="number" placeholder="00" min="16" max="110" id="number" id="age" required>
+                </div>
+            </section>
             
+            <!-- radion buttons starts here -->
+
+            <section class="grid two-col col-gap">
+                <p>Select gender:</p>
+                <div>
+                    <input id="male" type="radio" name="gender" value="Male">
+                    <label for="male">Male</label>
+                
+                    <input type="radio" name="gender" value="Female">
+                    <label for="female">Female</label>
+                                
+                    <input id="transgender" type="radio" name="gender" value="TG">
+                    <label for="transgender">Transgender</label>
+                </div>
+            </section>
+                
             
+            <!-- drop down list starts here -->
+
+            <section class="grid two-col col-gap">
+                <p>Select your branch :</p>
+
             <select for="branch" id="dropdown">
                 <option value="IT">Information Technololgy</option>
                 <option value="electronics">Electronics</option>
@@ -51,23 +81,69 @@
                 <option value="MC">Moss Communication</option>
                 <option value="FD">Fashion & Designing</option>
             </select>
+            </section>
+
+            <!-- checkboxes starts here -->
+
+            <section class="grid two-col col-gap">
+                <p>What is most admirable in Govt. Polytechnic Ghaziabad ?</p>
+                <div class="grid ">
+                    <div>
+                        <input type="checkbox" name="branch" value="IT" id="EE">
+                        <label for="EE">Each & everything</label>
+                    </div>
+
+                    
+                    <div>
+                        <input type="checkbox" name="branch" value="IT" id="PG">
+                        <label for="PG">Hostel</label>
+                    </div>
+                    
+                    
+                    <div>
+                        <input type="checkbox" name="branch" value="IT" id="CT">
+                        <label for="CT">Canteen</label>
+                    </div>
+                    
+                    
+                    <div>
+                        <input type="checkbox" name="branch" value="IT" id="PK">
+                        <label for="PK">Parks</label>
+                    </div>
+                    
+                    
+                    <div>
+                        <input type="checkbox" name="branch" value="IT" id="TS">
+                        <label for="TS">Teaching shedule</label>
+                    </div>
+                    
+                    
+                    <div>
+                        <input type="checkbox" name="branch" value="IT" id="DC">
+                        <label for="DC">Decipline</label>
+                    </div>
+                    
+                </div>
+            </section>
+                
             
-            <label for="">
-                <input type="checkbox" name="branch" value="IT">Information Technololgy
-                <input type="checkbox" name="branch" value="electronics">Electronics
-                <input type="checkbox" name="branch" value="civil">Civil
-                <input type="checkbox" name="branch" value="mechanical prod">Mechanical Production
-                <input type="checkbox" name="branch" value="MC">Moss Communication
-                <input type="checkbox" name="branch" value="FD">Fashion & Designing
-            </label>
-            
-            <label for="additional comments">
+
+            <!-- additional things -->
+
+            <section class="grid two-col col-gap">
                 <p>Leave a suggestion :</p>
-                <textarea name="suggestions"  cols="30" rows="10"></textarea>
-            </label>
+                <textarea placeholder="Enter text....." name="suggestions" cols="30" rows="10"></textarea>
+            </section>
+                
+            <!-- submit button is here -->
             
-            <input type="submit">
             
+                <input type="submit" id="submit">
+            
+            <!-- endup of page -->
+
         </form>
-    </body>
+    </main>
+</body>
+
 </html>
